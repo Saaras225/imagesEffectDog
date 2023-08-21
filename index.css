@@ -1,0 +1,71 @@
+body {
+  background-image:url(wall1.jpg) ;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+}
+
+#title {
+  color:bisque;
+  font-size: 70px;
+  height: 150px;
+  background-color: blueviolet;
+  text-decoration: overline;
+  align-self: center;
+  text-align: center;
+}
+
+#back {
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+}
+
+.dogs {
+  border-radius: 12px;
+  height: 500px;
+  transition: width 1s;
+  transition-timing-function: linear;
+  object-fit: cover;
+}
+
+.dogs:focus-within {
+ transition: width 1s easy;
+ object-fit: fill;
+}
+
+@media only screen and (max-width: 600px) {
+  .dogs {
+    margin: 1px;
+    width: 30px;
+  }
+
+  .dogs:focus-within {
+    width: 170px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .dogs {
+    margin: 10px;
+    width: 70px;
+  }
+
+  .dogs:focus-within {
+    width: 300px;
+  }
+} 
+
+@media only screen and (min-width: 992px) {
+  .dogs {
+    margin: 10px;
+    width: 70px;
+  }
+
+  .dogs:focus-within {
+    width: 500px;
+    transition: width 1s easy;
+  }
+} 
