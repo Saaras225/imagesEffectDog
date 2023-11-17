@@ -1,71 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-image:url(wall1.jpg) ;
+  font-family: 'Muli', sans-serif;
+  background-image:url(wall1.jpg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  margin:0
 }
 
 #container {
-  display: flex;
+  display:flex;
   flex-direction: column;
+  width: 100vw;
 }
 
 #title {
   color:bisque;
   font-size: 70px;
   height: 150px;
-  background-color: blueviolet;
+  background-color:indianred;
   text-decoration: overline;
   align-self: center;
   text-align: center;
 }
 
 #back {
- display: flex;
- flex-direction: row;
- justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 80vh;;
 }
 
 .dogs {
-  border-radius: 12px;
-  height: 500px;
-  transition: width 1s;
-  transition-timing-function: linear;
-  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  height: 80vh;
+  border-radius: 50px;
+  flex: 0.5;
+  cursor: pointer;
+  margin: 10px;
+  -webkit-transition: all 700ms ease-in;
 }
 
-.dogs:focus-within {
- transition: width 1s easy;
- object-fit: fill;
+.dogs h3 {
+  color: indianred;
+  font-size: 2.5rem;
+  bottom: 20px;
+  left: 20px;
+  margin-top: 10px;
+  opacity: 0;
 }
 
-@media only screen and (max-width: 600px) {
-  .dogs {
-    margin: 1px;
-    width: 30px;
-  }
-
-  .dogs:focus-within {
-    width: 170px;
-  }
+.dogs.active {
+  flex-grow: 5;
 }
 
-@media only screen and (min-width: 768px) {
-  .dogs {
-    margin: 10px;
-    width: 70px;
-  }
+.dogs.active h3 {
+  opacity: 1;
+  transition: opacity 0.5s ease-in 0.4s;
+}
 
-  .dogs:focus-within {
-    width: 300px;
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
   }
-} 
-
-@media only screen and (min-width: 992px) {
-  .dogs {
-    margin: 10px;
-    width: 70px;
-  }
-
-  .dogs:focus-within {
-    width: 500px;
-    transition: width 1s easy;
-  }
-} 
+}
